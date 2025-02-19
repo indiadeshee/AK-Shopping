@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-commerce Platform - Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .note {
+            background: #fff3cd;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .important {
+            background: #f8d7da;
+            padding: 15px;
+            border-left: 4px solid #dc3545;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modern E-commerce Platform</h1>
+    <p>Version 1.0.0</p>
+
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#customization">Customization</a></li>
+        <li><a href="#api">API Documentation</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#support">Support</a></li>
+    </ol>
+
+    <h2 id="introduction">Introduction</h2>
+    <p>Modern E-commerce Platform is a complete solution for creating your online store. Built with Node.js, Express, and MySQL, it provides all the essential features needed for a successful e-commerce business.</p>
+
+    <h2 id="features">Features</h2>
+    <ul>
+        <li>User Authentication System
+            <ul>
+                <li>Secure registration and login</li>
+                <li>Password recovery</li>
+                <li>Social media integration ready</li>
+            </ul>
+        </li>
+        <li>Product Management
+            <ul>
+                <li>Category management</li>
+                <li>Product variants</li>
+                <li>Stock management</li>
+                <li>Image optimization</li>
+            </ul>
+        </li>
+        <li>Shopping Cart
+            <ul>
+                <li>Real-time updates</li>
+                <li>Save for later</li>
+                <li>Guest cart</li>
+            </ul>
+        </li>
+        <li>Order Management
+            <ul>
+                <li>Order tracking</li>
+                <li>Invoice generation</li>
+                <li>Email notifications</li>
+            </ul>
+        </li>
+        <li>Payment Integration
+            <ul>
+                <li>Multiple payment gateways</li>
+                <li>Secure checkout</li>
+                <li>Payment status tracking</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2 id="installation">Installation</h2>
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Node.js (v14 or higher)</li>
+        <li>MySQL (v8 or higher)</li>
+        <li>npm (Node Package Manager)</li>
+    </ul>
+
+    <h3>Step-by-Step Installation</h3>
+    <pre>
+# 1. Extract the files
+unzip modern-ecommerce.zip
+
+# 2. Navigate to the project directory
+cd modern-ecommerce
+
+# 3. Install dependencies
+npm install
+
+# 4. Configure database
+mysql -u root -p < database/schema.sql
+
+# 5. Update configuration
+cp config/db.example.js config/db.js
+# Edit config/db.js with your database credentials
+
+# 6. Start the server
+npm start
+    </pre>
+
+    <h2 id="configuration">Configuration</h2>
+    <h3>Database Configuration</h3>
+    <pre>
+// config/db.js
+module.exports = {
+    host: 'localhost',
+    user: 'your_username',
+    password: 'your_password',
+    database: 'shopping_db'
+}
+    </pre>
+
+    <h3>Environment Variables</h3>
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Description</th>
+            <th>Default</th>
+        </tr>
+        <tr>
+            <td>PORT</td>
+            <td>Server port number</td>
+            <td>3000</td>
+        </tr>
+        <tr>
+            <td>NODE_ENV</td>
+            <td>Environment (development/production)</td>
+            <td>development</td>
+        </tr>
+        <tr>
+            <td>SESSION_SECRET</td>
+            <td>Session encryption key</td>
+            <td>your-secret-key</td>
+        </tr>
+    </table>
+
+    <h2 id="customization">Customization</h2>
+    <h3>Themes</h3>
+    <p>The platform comes with three pre-built themes:</p>
+    <ul>
+        <li>Modern (default)</li>
+        <li>Classic</li>
+        <li>Minimal</li>
+    </ul>
+
+    <p>To change the theme, modify the following in your HTML:</p>
+    <pre>
+&lt;link rel="stylesheet" href="/css/themes/[theme-name].css"&gt;
+    </pre>
+
+    <h3>Custom Styling</h3>
+    <p>Create your custom theme by copying and modifying the default theme:</p>
+    <pre>
+cp public/css/themes/modern.css public/css/themes/custom.css
+    </pre>
+
+    <h2 id="api">API Documentation</h2>
+    <h3>Authentication Endpoints</h3>
+    <table>
+        <tr>
+            <th>Endpoint</th>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>/api/auth/register</td>
+            <td>POST</td>
+            <td>Register new user</td>
+        </tr>
+        <tr>
+            <td>/api/auth/login</td>
+            <td>POST</td>
+            <td>User login</td>
+        </tr>
+        <tr>
+            <td>/api/auth/logout</td>
+            <td>POST</td>
+            <td>User logout</td>
+        </tr>
+    </table>
+
+    <h3>Product Endpoints</h3>
+    <table>
+        <tr>
+            <th>Endpoint</th>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>/api/products</td>
+            <td>GET</td>
+            <td>Get all products</td>
+        </tr>
+        <tr>
+            <td>/api/products/:id</td>
+            <td>GET</td>
+            <td>Get product by ID</td>
+        </tr>
+        <tr>
+            <td>/api/products/category/:category</td>
+            <td>GET</td>
+            <td>Get products by category</td>
+        </tr>
+    </table>
+
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <div class="note">
+        <h4>Common Issues</h4>
+        <ol>
+            <li>Database Connection Errors
+                <pre>
+Error: ER_ACCESS_DENIED_ERROR
+Solution: Check your database credentials in config/db.js
+                </pre>
+            </li>
+            <li>Port Already in Use
+                <pre>
+Error: EADDRINUSE
+Solution: Change the port in .env or terminate the process using that port
+                </pre>
+            </li>
+        </ol>
+    </div>
+
+    <h2 id="support">Support</h2>
+    <p>For support, please contact us through:</p>
+    <ul>
+        <li>Email: support@your-domain.com</li>
+        <li>CodeCanyon Comments</li>
+        <li>GitHub Issues</li>
+    </ul>
+
+    <div class="important">
+        <h4>Important Notes</h4>
+        <ul>
+            <li>Regular updates are provided every month</li>
+            <li>Custom modifications are available on request</li>
+            <li>License is for single end product</li>
+        </ul>
+    </div>
+</body>
+</html>

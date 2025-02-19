@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - AK Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="AK Shopping Logo">
+            AK Shopping
+        </div>
+        <nav class="menubar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="login-btn">Login</button>
+            <button class="cart-btn"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></button>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Section -->
+    <div class="cart-container">
+        <h2>Shopping Cart</h2>
+        <div class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        
+        <div class="cart-summary">
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <span class="subtotal-amount">$0.00</span>
+            </div>
+            <div class="shipping">
+                <span>Shipping:</span>
+                <span class="shipping-amount">$0.00</span>
+            </div>
+            <div class="tax">
+                <span>Tax (10%):</span>
+                <span class="tax-amount">$0.00</span>
+            </div>
+            <div class="total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+        </div>
+
+        <div class="checkout-section">
+            <div class="coupon-code">
+                <input type="text" placeholder="Enter coupon code">
+                <button class="apply-coupon">Apply</button>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm">
+                <div class="form-section">
+                    <h3>Shipping Information</h3>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Address" required>
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="Postal Code" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+
+                <div class="form-section">
+                    <h3>Payment Information</h3>
+                    <input type="text" placeholder="Card Number" required>
+                    <div class="card-details">
+                        <input type="text" placeholder="MM/YY" required>
+                        <input type="text" placeholder="CVV" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="place-order-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>AK Shopping - Your one-stop shop for all your needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@akshopping.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AK Shopping. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://img.icons8.com/color/48/000000/shop.png" alt="AK Shopping Logo">
+            AK Shopping
+        </div>
+        <nav class="menubar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="auth-buttons">
+                <button class="login-btn">Login</button>
+                <button class="register-btn">Register</button>
+            </div>
+            <div class="user-info" style="display: none;">
+                <span class="user-name"></span>
+                <div class="user-menu">
+                    <a href="#" class="wishlist-link"><i class="fas fa-heart"></i> Wishlist</a>
+                    <a href="#" class="orders-link"><i class="fas fa-box"></i> Orders</a>
+                    <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </div>
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Slider Section -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?w=1200&h=400&fit=crop" alt="Latest Electronics Collection"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&h=400&fit=crop" alt="Premium Gadgets"></div>
+            <div class="slide"><img src="https://images.unsplash.com/photo-1468495244123-6c6c332eeece?w=1200&h=400&fit=crop" alt="Special Offers"></div>
+        </div>
+        <button class="prev-btn">❮</button>
+        <button class="next-btn">❯</button>
+    </div>
+
+    <!-- Product Filters -->
+    <div class="filter-section">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="categoryFilter">Category:</label>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="phones">Phones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="priceRange">Max Price: ₹<span id="priceValue">50000</span></label>
+                <input type="range" id="priceRange" min="0" max="200000" step="1000" value="50000">
+            </div>
+            <div class="filter-group">
+                <label>Rating:</label>
+                <div class="rating-filters">
+                    <input type="radio" name="rating" value="4" id="rating4">
+                    <label for="rating4">4+ ★</label>
+                    <input type="radio" name="rating" value="3" id="rating3">
+                    <label for="rating3">3+ ★</label>
+                    <input type="radio" name="rating" value="0" id="ratingAll" checked>
+                    <label for="ratingAll">All</label>
+                </div>
+            </div>
+            <div class="filter-group">
+                <label for="sortSelect">Sort By:</label>
+                <select id="sortSelect">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products-container">
+            <!-- Phones -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300&h=300&fit=crop" alt="iPhone 13 Pro">
+                <h3>iPhone 13 Pro</h3>
+                <p class="price">₹89,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=300&h=300&fit=crop" alt="Samsung Galaxy S21">
+                <h3>Samsung Galaxy S21</h3>
+                <p class="price">₹72,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=300&h=300&fit=crop" alt="OnePlus 9 Pro">
+                <h3>OnePlus 9 Pro</h3>
+                <p class="price">₹64,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Laptops -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=300&h=300&fit=crop" alt="MacBook Pro">
+                <h3>MacBook Pro M1</h3>
+                <p class="price">₹122,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&h=300&fit=crop" alt="Dell XPS 13">
+                <h3>Dell XPS 13</h3>
+                <p class="price">₹94,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9?w=300&h=300&fit=crop" alt="HP Spectre x360">
+                <h3>HP Spectre x360</h3>
+                <p class="price">₹112,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Accessories -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" alt="Sony WH-1000XM4">
+                <h3>Sony WH-1000XM4</h3>
+                <p class="price">₹24,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop" alt="AirPods Pro">
+                <h3>AirPods Pro</h3>
+                <p class="price">₹21,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=300&fit=crop" alt="Gaming Mouse">
+                <h3>Logitech G502</h3>
+                <p class="price">₹4,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- More Phones -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&h=300&fit=crop" alt="Xiaomi Mi 11">
+                <h3>Xiaomi Mi 11</h3>
+                <p class="price">₹49,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=300&h=300&fit=crop" alt="Realme GT">
+                <h3>Realme GT</h3>
+                <p class="price">₹37,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1597762470488-3877b1f538c6?w=300&h=300&fit=crop" alt="Vivo X60 Pro">
+                <h3>Vivo X60 Pro</h3>
+                <p class="price">₹49,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- More Laptops -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593642634402-b0eb5e2eebc9?w=300&h=300&fit=crop" alt="Lenovo ThinkPad">
+                <h3>Lenovo ThinkPad X1</h3>
+                <p class="price">₹134,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?w=300&h=300&fit=crop" alt="Asus ROG">
+                <h3>Asus ROG Zephyrus</h3>
+                <p class="price">₹142,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?w=300&h=300&fit=crop" alt="Acer Predator">
+                <h3>Acer Predator</h3>
+                <p class="price">₹129,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- More Accessories -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=300&fit=crop" alt="Mechanical Keyboard">
+                <h3>Corsair K95 RGB</h3>
+                <p class="price">₹15,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop" alt="Gaming Headset">
+                <h3>HyperX Cloud II</h3>
+                <p class="price">₹8,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1587033411391-5d9e51cce126?w=300&h=300&fit=crop" alt="Webcam">
+                <h3>Logitech C920</h3>
+                <p class="price">₹7,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Tablets -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=300&fit=crop" alt="iPad Pro">
+                <h3>iPad Pro 12.9</h3>
+                <p class="price">₹99,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?w=300&h=300&fit=crop" alt="Samsung Tab S7">
+                <h3>Samsung Tab S7+</h3>
+                <p class="price">₹77,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Smart Watches -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=300&h=300&fit=crop" alt="Apple Watch">
+                <h3>Apple Watch Series 7</h3>
+                <p class="price">₹41,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" alt="Galaxy Watch">
+                <h3>Galaxy Watch 4</h3>
+                <p class="price">₹26,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- More Products -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1606229365485-93a3b8ee0385?w=300&h=300&fit=crop" alt="Gaming Console">
+                <h3>PS5 Digital Edition</h3>
+                <p class="price">₹39,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=300&h=300&fit=crop" alt="Xbox Series X">
+                <h3>Xbox Series X</h3>
+                <p class="price">₹49,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1592921870789-04563d55041c?w=300&h=300&fit=crop" alt="Nintendo Switch">
+                <h3>Nintendo Switch OLED</h3>
+                <p class="price">₹29,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Smart Home -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=300&h=300&fit=crop" alt="Echo Dot">
+                <h3>Amazon Echo Dot</h3>
+                <p class="price">₹3,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1626143508000-4b5904e5e84a?w=300&h=300&fit=crop" alt="Google Nest">
+                <h3>Google Nest Hub</h3>
+                <p class="price">₹7,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Cameras -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop" alt="Sony Alpha">
+                <h3>Sony Alpha A7 III</h3>
+                <p class="price">₹164,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=300&h=300&fit=crop" alt="Canon EOS">
+                <h3>Canon EOS R6</h3>
+                <p class="price">₹215,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- More Accessories -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=300&fit=crop" alt="Power Bank">
+                <h3>20000mAh Power Bank</h3>
+                <p class="price">₹1,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1625895197185-efcec01cffe0?w=300&h=300&fit=crop" alt="Wireless Charger">
+                <h3>15W Fast Charger</h3>
+                <p class="price">₹2,499</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Storage -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&h=300&fit=crop" alt="External SSD">
+                <h3>1TB External SSD</h3>
+                <p class="price">₹9,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1600861194942-f883de0dfe96?w=300&h=300&fit=crop" alt="Memory Card">
+                <h3>256GB SD Card</h3>
+                <p class="price">₹2,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- Networking -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1648413653877-ade5eefd2f1b?w=300&h=300&fit=crop" alt="WiFi Router">
+                <h3>WiFi 6 Router</h3>
+                <p class="price">₹12,999</p>
+                <div class="rating">★★★★★</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586776977607-310e9c725c37?w=300&h=300&fit=crop" alt="Network Switch">
+                <h3>Gigabit Switch</h3>
+                <p class="price">₹4,999</p>
+                <div class="rating">★★★★☆</div>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-details">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Shopping Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +1234567890</p>
+                    <p><i class="fas fa-envelope"></i> info@akshopping.com</p>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contactName" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contactEmail" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="contactSubject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="contactResponse" class="response-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal login-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+            </div>
+            <div id="authMessage" class="auth-message"></div>
+            <form id="loginForm" class="auth-form">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <form id="registerForm" class="auth-form" style="display: none;">
+                <input type="text" id="registerName" placeholder="Full Name" required>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>AK Shopping - Your one-stop shop for all your needs.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@akshopping.com</p>
+                <p>Phone: +1234567890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AK Shopping. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script src="search.js"></script>
+    <script src="auth.js"></script>
+    <script src="contact.js"></script>
+    <script src="recent-products.js"></script>
+</body>
+</html>
